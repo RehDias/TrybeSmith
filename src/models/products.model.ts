@@ -9,6 +9,12 @@ const productsModel = {
       .execute<ResultSetHeader>(sqlQuery, [data.name, data.amount]);
     return { id: insertId, ...data };
   },
+
+  async listAll(): Promise<Products[]> {
+    const sqlQuery = 'SELECT * FROM Trybesmith.Products';
+    const [products] = await connection.execute(sqlQuery);
+    return products as Products[];
+  },
 };
 
 export default productsModel;

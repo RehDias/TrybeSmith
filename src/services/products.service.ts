@@ -16,6 +16,11 @@ const productsService = {
     const product = await productsModel.add(body);
     return product;
   },
+
+  async listAll(): Promise<Products[]> {
+    const products = await productsModel.listAll();
+    return products;
+  },
 };
 
 export default productsService;
