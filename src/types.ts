@@ -15,5 +15,9 @@ export type Users = Index & {
   password: string
 };
 
+export type Orders = Index & {
+  userId: number
+};
+
 export type AddProduct = Omit<Products, 'id'>;
 export type AddUsers = Omit<Users, 'id'>;
