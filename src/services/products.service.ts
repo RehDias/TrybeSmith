@@ -5,8 +5,8 @@ import { Products } from '../types';
 const productsService = {
   async validateAddBody(data: unknown) {
     const schema = Joi.object<Products>({
-      name: Joi.string().required(),
-      amount: Joi.string().required(),
+      name: Joi.string().min(3).required(),
+      amount: Joi.string().min(3).required(),
     });
     const body = await schema.validateAsync(data);
     return body;

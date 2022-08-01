@@ -8,6 +8,9 @@ const codeErrors: Record<string, number> = {
 const errorHandler = (e: Error, _req: Request, res: Response, _next: NextFunction) => {
   const code = codeErrors[e.name];
   if (!code) return res.status(500).json({ message: e.message });
+  if (e.message.includes('must be')) {
+    return res.status(422).json({ message: e.message });
+  }
   res.status(code).json({ message: e.message });
 };
 
