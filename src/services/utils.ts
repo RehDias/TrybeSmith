@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 const secret = process.env.JWT_SECRET || 'jwtSecret';
 
-export const createToken = async (data: object): Promise<string> => {
+export const createToken = async (data: object): Promise<string> => {  
   const token = jwt.sign(data, secret);
   return token;
 };

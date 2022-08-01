@@ -19,5 +19,10 @@ export type Orders = Index & {
   userId: number
 };
 
+export type Login = {
+  username: string
+  password: string
+};
+
 export type AddProduct = Omit<Products, 'id'>;
 export type AddUsers = Omit<Users, 'id'>;

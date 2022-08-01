@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 
 const codeErrors: Record<string, number> = {
   ValidationError: 400,
+  Unauthorized: 401,
 };
 
 const errorHandler = (e: Error, _req: Request, res: Response, _next: NextFunction) => {
