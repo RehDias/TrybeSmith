@@ -5,10 +5,11 @@ import { Users } from '../types';
 const usersService = {
   async validateAddBody(data: unknown) {
     const schema = Joi.object<Users>({
-      username: Joi.string().required(),
-      classe: Joi.string().required(),
-      level: Joi.number().positive().integer().required(),
-      password: Joi.string().required(),
+      username: Joi.string().min(3).required(),
+      classe: Joi.string().min(3).required(),
+      level: Joi.number().min(1).positive().integer()
+        .required(),
+      password: Joi.string().min(8).required(),
     });
     const body = await schema.validateAsync(data);
     return body;
