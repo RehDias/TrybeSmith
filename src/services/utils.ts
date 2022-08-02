@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import UnauthorizedError from '../err/unauthorized';
 
 const secret = process.env.JWT_SECRET || 'jwtSecret';
 
@@ -7,12 +8,13 @@ export const createToken = async (data: object): Promise<string> => {
   return token;
 };
 
-export const readToken = (token: string) => {
+export const readToken = (token: undefined | string) => {
   try {
+    if (!token) throw new UnauthorizedError('Token not found');
     const data = jwt.verify(token, secret);
     return data;
   } catch (error) {
-    // if (!token || token === undefined) throwError('Unauthorized', 'Token not found');
-    // throwError('Unauthorized', 'Expired or invalid token');
+    if (!token) throw new UnauthorizedError('Token not found');
+    throw new UnauthorizedError('Invalid token');
   }
 };

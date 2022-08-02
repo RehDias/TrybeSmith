@@ -21,6 +21,10 @@ const productsService = {
     const products = await productsModel.listAll();
     return products;
   },
+
+  async edit(data: number[], orderId: number) {
+    await productsModel.edit(data, orderId);
+  },
 };
 
 export default productsService;

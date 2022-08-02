@@ -15,6 +15,12 @@ const productsModel = {
     const [products] = await connection.execute(sqlQuery);
     return products as Products[];
   },
+
+  async edit(data: number[], orderId: number) {
+    const sqlQuery = 'UPDATE Trybesmith.Products SET orderId = ? WHERE id = ?';
+    await Promise.resolve(data
+      .map((productId) => connection.execute(sqlQuery, [orderId, productId])));
+  },
 };
 
 export default productsModel;

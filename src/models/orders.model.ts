@@ -1,4 +1,5 @@
-import { RowDataPacket } from 'mysql2';
+import { ResultSetHeader, RowDataPacket } from 'mysql2';
+import { Orders } from '../types';
 import connection from './connection';
 
 const ordersModel = {
@@ -11,6 +12,12 @@ const ordersModel = {
       ORDER BY ord.userId`;
     const [orders] = await connection.execute<RowDataPacket[]>(sqlQuery);
     return orders;
+  },
+
+  async add(userId: number): Promise<Orders> {
+    const sqlQuery = 'INSERT INTO Trybesmith.Orders (userId) VALUES (?)';
+    const [{ insertId }] = await connection.execute<ResultSetHeader>(sqlQuery, [userId]);
+    return { id: insertId, userId };
   },
 };
 
