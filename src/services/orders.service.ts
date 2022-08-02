@@ -6,11 +6,12 @@ const ordersService = {
   async validateAddBody(data: unknown) {
     const schema = Joi.object({
       productsIds: Joi.array().items(
-        Joi.number().required(),
-        Joi.number().required(),
-      ).required().label('productsIds')
+        Joi.number(),
+        Joi.number(),
+      ).min(1).required()
+        .label('productsIds')
         .messages({
-          'array.includes': '"productsIds" must include only numbers',
+          'array.min': '"productsIds" must include only numbers',
         }),
     });
     const result = await schema.validateAsync(data);
