@@ -1,16 +1,13 @@
-# 🚧 README em construção 🚧
+<h1>Projeto Trybesmith</h1>
 
-<!-- Olá, Tryber!
+<h2>Sobre</h2>
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+<p>Neste projeto é desenvolvido uma API de uma loja de itens medievais, onde é possível adicionar, atualizar, remover e visualizar os itens da loja, assim como efetuar login e adicionar um usuário ao banco de dados, utilizando tokens para verificação de usuário. Esse projeto foi realizado quando estava aprendendo TypeScript no módulo de back-end.</p>
 
-É essencial que você preencha esse documento por conta própria, ok?
+<h3>Tecnologias utilizadas</h3>
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+<p>Essa aplicação é desenvolvida em TypeScript, Express e MySql, assim como as bibliotecas Joi e jsonwebtoken. O docker-compose foi desenvolvido pela Trybe.</p>
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+<h3>Aplicação</h3>
 
--->
+https://user-images.githubusercontent.com/91297277/200132751-d7f24bc5-0f1c-4418-afa1-b069ba58e0d3.mp4
