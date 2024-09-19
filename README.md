@@ -1,4 +1,4 @@
-# Trybesmith
+# Trybesmith <img src="https://github.com/user-attachments/assets/1ba22f66-2bed-458c-b6ca-3956b7f13d70" alt="image" width="60"/>
 
 ## Sobre
 
